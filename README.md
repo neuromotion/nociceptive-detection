@@ -15,6 +15,6 @@ This directory contains raw data associated with figures from the nociceptive de
 ### [spinal-ephys](/raw-data/spinal-ephys)
 Data is saved as a struct in a .mat file, and contains the following fields:  
  - times: timestamps for continuous data (ms)
- - data: data points (mV)
+ - data: continuous (mV)
  - fs: sampling rate (S/s)
  - events: timestamps for events (ms)
