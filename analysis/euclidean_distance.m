@@ -6,16 +6,16 @@ function euclid_d = euclidean_distance(data)
 %% set vars
 self_rep = data.self_rep;
 rflx_rep = data.rflx_rep;
-trial_num = data.trial_num;
+num_trials = data.num_trials;
 stim_vals = data.stim_vals;
 
 %% create similarity index matricies for euclidean distance calculations
-si_trials = zeros(trial_num,1);
+si_trials = zeros(num_trials,1);
 euclid_d = zeros(length(unique(stim_vals)), 2);
 euclid_d(:,1) = unique(stim_vals);
 
 %% calculate difference for each trial
-for x = 1:trial_num
+for x = 1:num_trials
     
     si_trials(x,1) = (self_rep(x)-rflx_rep(x))^2;
   
