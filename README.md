@@ -2,6 +2,15 @@
 This repository contains associated data used and acquired during the development of the nociceptive detection assay.   
 For assembly and use, please see the materials and methods section in the [Scientific Reports](https://www.nature.com/articles/s41598-020-70028-8) paper.
 
+## [analysis](/analysis)
+This directory contains matlab scripts pertaining to custom functions used to analyze behavioral data.
+### euclidean_distance
+Calculates the euclidean distance between the self-report and reflex report for each stimulation intensity in a given session.  
+#### input
+ - data: struct containing self-reports (1x360 data.self_rep), video scores (1x360 data.rflx_rep), number of trials (data.num_trials), and the stimulus intensities (1x360 data.stim_vals)
+#### output
+ - euclid_d: nx2 matrix containing the range of stimulation intensities and corresponding euclidean distances
+
 ## [behavioral-platform](/behavioral-platform)
 This directory contains the files for custom components used in building the nociceptive detection behavioral rig.  
 ### grated floor
