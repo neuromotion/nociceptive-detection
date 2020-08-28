@@ -1,0 +1,35 @@
+function euclid_d = euclidean_distance(data)
+%% Calculates euclidean distance at each intensity for the session
+
+%% set vars
+self_rep = data.self_rep;
+rflx_rep = data.rflx_rep;
+trial_num = data.trial_num;
+stim_vals = data.stim_vals;
+
+%% create similarity index matricies for euclidean distance calculations
+si_trials = zeros(trial_num,1);
+si_intensity = zeros(length(unique(stim_vals)), 2);
+si_intensity(:,1) = unique(stim_vals);
+
+%% calculate difference for each trial
+for x = 1:trial_num
+    
+    si_trials(x,1) = (self_rep(x)-rflx_rep(x))^2;
+  
+end
+
+%% calculate euclidean distance for each intensity
+for x = 1:unique(stim_vals)
+    
+    idx = find(data.stim_vals == si_intensity(x,1));
+    sum_si_trials = sum(si_trials(idx));
+    si_intensity(x,2) = sqrt(si);
+
+end
+
+% store similarity measures in struct 'si'
+euclid_d.trials = si_trial;
+euclid_d.intensity = si_intensity;
+
+end
